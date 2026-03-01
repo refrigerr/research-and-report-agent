@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" width="860" height="600" font-family="'Segoe UI', system-ui, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="600" fill="#0f1117" rx="16"/>
+
+  <!-- Title -->
+  <text x="430" y="38" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="600" letter-spacing="1">RESEARCH &amp; REPORT AGENT — PIPELINE</text>
+
+  <defs>
+    <linearGradient id="gUser" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="gAgent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="gSearch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+    <linearGradient id="gWrite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="gCritic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="gEnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+  <!-- ── ROW 1: Input → Planner → Query Writer → Researcher ── -->
+
+  <!-- Input Node -->
+  <rect x="40" y="200" width="130" height="64" rx="10" fill="url(#gUser)" opacity="0.95"/>
+  <text x="105" y="226" text-anchor="middle" fill="white" font-size="11" font-weight="700">📥 INPUT</text>
+  <text x="105" y="244" text-anchor="middle" fill="#bfdbfe" font-size="9">Extracts clean topic</text>
+  <text x="105" y="256" text-anchor="middle" fill="#bfdbfe" font-size="9">from user message</text>
+
+  <!-- Planner Node -->
+  <rect x="210" y="200" width="130" height="64" rx="10" fill="url(#gAgent)" opacity="0.95"/>
+  <text x="275" y="226" text-anchor="middle" fill="white" font-size="11" font-weight="700">🧠 PLANNER</text>
+  <text x="275" y="244" text-anchor="middle" fill="#ddd6fe" font-size="9">Builds structured</text>
+  <text x="275" y="256" text-anchor="middle" fill="#ddd6fe" font-size="9">research plan (4-6 steps)</text>
+
+  <!-- Query Writer Node -->
+  <rect x="380" y="200" width="130" height="64" rx="10" fill="url(#gAgent)" opacity="0.95"/>
+  <text x="445" y="220" text-anchor="middle" fill="white" font-size="11" font-weight="700">✍️ QUERY</text>
+  <text x="445" y="234" text-anchor="middle" fill="white" font-size="11" font-weight="700">WRITER</text>
+  <text x="445" y="250" text-anchor="middle" fill="#ddd6fe" font-size="9">Generates 2-3 search</text>
+  <text x="445" y="262" text-anchor="middle" fill="#ddd6fe" font-size="9">queries per step</text>
+
+  <!-- Researcher Node -->
+  <rect x="550" y="200" width="130" height="64" rx="10" fill="url(#gSearch)" opacity="0.95"/>
+  <text x="615" y="226" text-anchor="middle" fill="white" font-size="11" font-weight="700">🌐 RESEARCHER</text>
+  <text x="615" y="244" text-anchor="middle" fill="#cffafe" font-size="9">Runs queries on web</text>
+  <text x="615" y="256" text-anchor="middle" fill="#cffafe" font-size="9">via Tavily API</text>
+
+  <!-- ── ROW 2: Writer + Critic ── -->
+
+  <!-- Writer Node -->
+  <rect x="550" y="360" width="130" height="64" rx="10" fill="url(#gWrite)" opacity="0.95"/>
+  <text x="615" y="386" text-anchor="middle" fill="white" font-size="11" font-weight="700">📝 WRITER</text>
+  <text x="615" y="404" text-anchor="middle" fill="#a7f3d0" font-size="9">Writes report</text>
+  <text x="615" y="416" text-anchor="middle" fill="#a7f3d0" font-size="9">drafts the report</text>
+
+  <!-- Critic Node -->
+  <rect x="380" y="360" width="130" height="64" rx="10" fill="url(#gCritic)" opacity="0.95"/>
+  <text x="445" y="386" text-anchor="middle" fill="white" font-size="11" font-weight="700">🔍 CRITIC</text>
+  <text x="445" y="404" text-anchor="middle" fill="#fde68a" font-size="9">Scores coverage,</text>
+  <text x="445" y="416" text-anchor="middle" fill="#fde68a" font-size="9">accuracy, clarity</text>
+
+  <!-- ── ROW 3: END (pushed down, centred under Critic) ── -->
+
+  <!-- END Node -->
+  <rect x="380" y="490" width="130" height="64" rx="10" fill="url(#gEnd)" opacity="0.95"/>
+  <text x="445" y="516" text-anchor="middle" fill="white" font-size="11" font-weight="700">🏁 END</text>
+  <text x="445" y="534" text-anchor="middle" fill="#cbd5e1" font-size="9">PDF report saved</text>
+
+  <!-- ── ARROWS row 1 ── -->
+  <line x1="170" y1="232" x2="207" y2="232" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="340" y1="232" x2="377" y2="232" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="510" y1="232" x2="547" y2="232" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Researcher ↓ Writer -->
+  <line x1="615" y1="264" x2="615" y2="357" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Writer ← Critic (left) -->
+  <line x1="550" y1="392" x2="513" y2="392" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Critic ↓ END (pass) -->
+  <line x1="445" y1="424" x2="445" y2="487" stroke="#4ade80" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+
+  <!-- Pass label — centred between Critic bottom and END top, no overlap -->
+  <rect x="358" y="438" width="174" height="18" rx="4" fill="#1e293b"/>
+  <text x="445" y="451" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="600">score ≥ 7  ✓ pass → deliver</text>
+
+  <!-- Critic: FAIL → back to Writer (orange dashed arc above) -->
+  <path d="M 445 360 Q 445 305 545 305 Q 615 305 615 360"
+        fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6,3"
+        marker-end="url(#arrow-orange)"/>
+
+  <!-- Fail label — sits in the arc corridor -->
+  <rect x="452" y="290" width="116" height="18" rx="4" fill="#1e293b"/>
+  <text x="510" y="303" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">score &lt; 7  (max 2×)</text>
+
+  <!-- ── STATE FLOW LABELS ── -->
+  <text x="188" y="222" text-anchor="middle" fill="#64748b" font-size="8">topic</text>
+  <text x="358" y="222" text-anchor="middle" fill="#64748b" font-size="8">plan</text>
+  <text x="528" y="222" text-anchor="middle" fill="#64748b" font-size="8">queries</text>
+  <text x="628" y="318" text-anchor="middle" fill="#64748b" font-size="8">results</text>
+  <text x="528" y="382" text-anchor="middle" fill="#64748b" font-size="8">report</text>
+  <text x="358" y="382" text-anchor="middle" fill="#64748b" font-size="8">critique</text>
+
+  <!-- ── USER INPUT bubble ── -->
+  <rect x="40" y="110" width="130" height="40" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+  <text x="105" y="128" text-anchor="middle" fill="#93c5fd" font-size="9">"what is RAG?"</text>
+  <text x="105" y="142" text-anchor="middle" fill="#64748b" font-size="8">user message</text>
+  <line x1="105" y1="150" x2="105" y2="197" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- ── PDF output bubble (below END) ── -->
+  <rect x="310" y="570" width="270" height="20" rx="6" fill="none"/>
+  <text x="445" y="584" text-anchor="middle" fill="#475569" font-size="9">report_20250302.pdf  →  /outputs</text>
+
+  <!-- ── Footer ── -->
+  <text x="430" y="596" text-anchor="middle" fill="#1e293b" font-size="10">Built with LangGraph · LangChain · GPT-4o · Tavily</text>
+</svg>
