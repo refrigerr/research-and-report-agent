@@ -55,7 +55,7 @@ def critic_node(state: AgentState) -> AgentState:
     report = state["report"]
     research_results = state["research_results"]
 
-    print(f"🔍 Critic is reviewing the report...\n")
+    print(f"Critic is reviewing the report...\n")
 
     prompt = CRITIC_PROMPT.format(
         plan=steps_to_text(plan.steps),
@@ -70,14 +70,14 @@ def critic_node(state: AgentState) -> AgentState:
 
     # Print scores
     s = critique.scores
-    print(f"   📊 Coverage: {s.coverage}/10 | Accuracy: {s.accuracy}/10 | "
+    print(f"Coverage: {s.coverage}/10 | Accuracy: {s.accuracy}/10 | "
           f"Clarity: {s.clarity}/10")
-    print(f"   Overall: {critique.overall}/10 — {'✅ Passed' if critique.passed else '❌ Failed'}")
+    print(f"Overall: {critique.overall}/10 — {'Passed' if critique.passed else 'Failed'}")
 
     if not critique.passed:
-        print(f"   Issues:")
+        print(f"Issues:")
         for issue in critique.issues:
-            print(f"     • {issue}")
+            print(f"- {issue}")
     print()
 
     return {"critique": critique}

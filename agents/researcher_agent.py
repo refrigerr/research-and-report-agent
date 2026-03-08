@@ -7,12 +7,12 @@ def researcher_node(state: AgentState) -> AgentState:
     """Researcher: runs each query through Tavily and collects results per step."""
     search_queries = state["search_queries"]
 
-    print(f"🌐 Researcher is searching the web...\n")
+    print(f"Researcher is searching the web...\n")
 
     research_results: list[StepResearch] = []
 
     for step in search_queries:
-        print(f"  🔎 Step {step.step_number}: {step.step_title}")
+        print(f"Step {step.step_number}: {step.step_title}")
         step_results: list[SearchResult] = []
 
         for query in step.queries:
@@ -34,7 +34,7 @@ def researcher_node(state: AgentState) -> AgentState:
                     ))
 
             except Exception as e:
-                print(f"     ⚠️  Search failed for '{query}': {e}")
+                print(f"Search failed for '{query}': {e}")
 
         research_results.append(StepResearch(
             step_number=step.step_number,
@@ -42,6 +42,6 @@ def researcher_node(state: AgentState) -> AgentState:
             results=step_results
         ))
 
-        print(f"     ✅ Collected {len(step_results)} results\n")
+        print(f"Collected {len(step_results)} results\n")
 
     return {"research_results": research_results}

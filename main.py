@@ -8,7 +8,7 @@ def print_report(report: Report, critique=None):
     print(f"  {report.title}")
     print("=" * width)
 
-    print(f"\n📌 EXECUTIVE SUMMARY")
+    print(f"\nEXECUTIVE SUMMARY")
     print(f"{report.executive_summary}\n")
 
     for section in report.sections:
@@ -36,7 +36,7 @@ def print_report(report: Report, critique=None):
         print(f"  Coverage   : {s.coverage}/10")
         print(f"  Accuracy   : {s.accuracy}/10")
         print(f"  Clarity    : {s.clarity}/10")
-        print(f"  Overall    : {critique.overall}/10 — {'✅ Passed' if critique.passed else '⚠️ Delivered after max revisions'}")
+        print(f"  Overall    : {critique.overall}/10 — {'Passed' if critique.passed else 'Delivered after max revisions'}")
 
         if not critique.passed and critique.issues:
             print(f"\n  Remaining issues:")
@@ -55,19 +55,19 @@ def run(user_message: str):
     research_results: list[StepResearch] = result["research_results"]
 
     print("=" * 60)
-    print(f"📋 RESEARCH PLAN: {plan.topic}")
+    print(f"RESEARCH PLAN: {plan.topic}")
     print("=" * 60)
-    print(f"\n🎯 Objective:\n   {plan.objective}\n")
+    print(f"\nObjective:\n   {plan.objective}\n")
 
     for step in plan.steps:
         print(f"  Step {step.step_number}: {step.title}")
         print(f"  ├─ What to do : {step.description}")
         print(f"  └─ Goal       : {step.goal}\n")
 
-    print(f"📄 Expected Output:\n   {plan.expected_output}")
+    print(f"Expected Output:\n   {plan.expected_output}")
 
     print("\n" + "=" * 60)
-    print("🔍 SEARCH QUERIES")
+    print("SEARCH QUERIES")
     print("=" * 60)
 
     for step_q in search_queries:
@@ -77,7 +77,7 @@ def run(user_message: str):
             print(f"{prefix} [{i}] {q}")
 
     print("\n" + "=" * 60)
-    print("📚 RESEARCH RESULTS")
+    print("RESEARCH RESULTS")
     print("=" * 60)
 
     for step_r in research_results:
@@ -96,7 +96,7 @@ def run(user_message: str):
     
     revision_count = result.get("revision_count", 0)
     print(f"\n\n{'=' * 60}")
-    print(f"  ✏️  REPORT  (revisions made: {revision_count}/{MAX_REVISIONS})")
+    print(f"REPORT  (revisions made: {revision_count}/{MAX_REVISIONS})")
     critique = result.get("critique")
     print_report(result["report"], critique)
 

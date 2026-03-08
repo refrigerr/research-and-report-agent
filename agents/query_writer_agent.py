@@ -40,7 +40,7 @@ def query_writer_node(state: AgentState) -> AgentState:
     """Query Writer: generates 2-3 search queries per research step."""
     plan = state["plan"]
 
-    print(f"✍️  Query Writer is generating search queries for {len(plan.steps)} steps...\n")
+    print(f"Query Writer is generating search queries for {len(plan.steps)} steps...\n")
 
     prompt = QUERY_WRITER_PROMPT.format(
         date=date.today(),

@@ -29,7 +29,7 @@ def planner_node(state: AgentState) -> AgentState:
     
     prompt = PLANNER_PROMPT.format(topic=topic)
     
-    print(f"\n🧠 Planner is creating a research plan for: '{topic}'\n")
+    print(f"\nPlanner is creating a research plan for: '{topic}'\n")
     
     plan: ResearchPlan = _llm.invoke(prompt)
     

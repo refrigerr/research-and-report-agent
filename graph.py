@@ -15,11 +15,11 @@ def should_revise(state: AgentState) -> str:
     revision_count = state.get("revision_count", 0)
 
     if not critique.passed and revision_count < MAX_REVISIONS:
-        print(f"   ↩️  Sending back to Writer (revision {revision_count + 1}/{MAX_REVISIONS})\n")
+        print(f"Sending back to Writer (revision {revision_count + 1}/{MAX_REVISIONS})\n")
         return "revise"
 
     if not critique.passed:
-        print(f"   ⚠️  Max revisions reached — delivering best available report.\n")
+        print(f"Max revisions reached — delivering best available report.\n")
 
     return "deliver"
 

@@ -64,13 +64,13 @@ def writer_node(state: AgentState) -> AgentState:
 
     if critique and not critique.passed:
         revision_count += 1
-        print(f"✍️  Writer is revising the report (revision {revision_count}/{MAX_REVISIONS})...\n")
+        print(f"Writer is revising the report (revision {revision_count}/{MAX_REVISIONS})...\n")
         revision_block = REVISION_BLOCK.format(
             issues="\n".join(f"- {i}" for i in critique.issues),
             instructions=critique.revision_instructions
         )
     else:
-        print(f"✍️  Writer is composing the report...\n")
+        print(f"Writer is composing the report...\n")
         revision_block = ""
 
     prompt = WRITER_PROMPT.format(
